@@ -14,6 +14,15 @@ function getHumanChoice() {
     return choice;
 }
 
+function playRound(humanChoice, computerChoice) {
+    normalizedHumanChoise = humanChoice.toLowerCase();
+    
+
+    // if (normalizedHumanChoise === "rock" && normalizedComputerChoice === "rock") {
+    //     return "tie"
+    // }
+}
+
 let = humanScore = 0;
 let = computerScore = 0;
 
