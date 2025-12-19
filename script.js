@@ -15,23 +15,41 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+    function showResults() {
+        console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
+    }
+
     normalizedHumanChoise = humanChoice.toLowerCase();
     // ((normalizedHumanChoise === "rock" && computerChoice === "rock") || (normalizedHumanChoise === "paper" && computerChoice === "paper") || (normalizedHumanChoise === "scissors" && computerChoice === "scissors")) old condition
     if (normalizedHumanChoise === computerChoice){
+        showResults();
         return "Tie"
     } else if (normalizedHumanChoise === "rock" && computerChoice === "paper") {
+        showResults();
+        computerScore++;
         return "You lose! Paper beats Rock"
     } else if (normalizedHumanChoise === "rock" && computerChoice === "scissors") {
+        showResults();
+        humanScore++;
         return "You win! Rock beats Scissors"
     } else if (normalizedHumanChoise === "paper" && computerChoice === "rock") {
+        showResults();
+        humanScore++;
         return "You win! Paper beats Rock"
     } else if (normalizedHumanChoise === "paper" && computerChoice === "scissors") {
+        showResults();
+        computerScore++;
         return "You lose! Scissors beats Paper"
     } else if (normalizedHumanChoise === "scissors" && computerChoice === "rock") {
+        showResults();
+        computerScore++;
         return "You lose! Rock beats Scissors"
     } else if (normalizedHumanChoise === "scissors" && computerChoice === "paper") {
+        showResults();
+        humanScore++;
         return "You win! Scissors beats Paper"
     } else {
+        showResults();
         return "something went wrong, try to write properly! "
     }
 }
@@ -42,25 +60,11 @@ let = computerScore = 0;
 // console.log(getComputerChoise());
 // console.log(getHumanChoice());
 
-let computerChoise = getComputerChoise();
-let humanCoise = getHumanChoice();
-console.log("Computers choise is", computerChoise);
-console.log(playRound(humanCoise, computerChoise));
 
-// function getRandom() {
-//     return Math.random();
-// }
 
-// function getRandomArbitrary(min, max) {
-//     return Math.random() * (max - min) + min;
-// }
+const computerSelection = getComputerChoise();
+const humanSelection = getHumanChoice();
+console.log("Computers choise is", computerSelection);
+console.log(playRound(humanSelection, computerSelection));
 
-// function getRandomInt(min, max) {
-//     const minCeiled = Math.ceil(min);
-//     const maxFloored = Math.floor(max);
-//     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
-// }
-
-// console.log(getRandom());
-// console.log(getRandomArbitrary(1,10));
-// console.log(getRandomInt(1,100));
+console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
