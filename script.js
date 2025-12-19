@@ -10,11 +10,12 @@ function getComputerChoise() {
 }
 
 function getHumanChoice() {
-
+    let choice = prompt("Choose: Rock Paper Scissors", "")
+    return choice;
 }
 
-// console.log(getComputerChoise());
-
+console.log(getComputerChoise());
+console.log(getHumanChoice());
 
 
 // function getRandom() {
