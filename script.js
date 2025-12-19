@@ -10,25 +10,42 @@ function getComputerChoise() {
 }
 
 function getHumanChoice() {
-    let choice = prompt("Choose: Rock Paper Scissors", "")
+    let choice = prompt("Choose: rock / paper / scissors", "")
     return choice;
 }
 
 function playRound(humanChoice, computerChoice) {
     normalizedHumanChoise = humanChoice.toLowerCase();
-    
-
-    // if (normalizedHumanChoise === "rock" && normalizedComputerChoice === "rock") {
-    //     return "tie"
-    // }
+    // ((normalizedHumanChoise === "rock" && computerChoice === "rock") || (normalizedHumanChoise === "paper" && computerChoice === "paper") || (normalizedHumanChoise === "scissors" && computerChoice === "scissors")) old condition
+    if (normalizedHumanChoise === computerChoice){
+        return "Tie"
+    } else if (normalizedHumanChoise === "rock" && computerChoice === "paper") {
+        return "You lose! Paper beats Rock"
+    } else if (normalizedHumanChoise === "rock" && computerChoice === "scissors") {
+        return "You win! Rock beats Scissors"
+    } else if (normalizedHumanChoise === "paper" && computerChoice === "rock") {
+        return "You win! Paper beats Rock"
+    } else if (normalizedHumanChoise === "paper" && computerChoice === "scissors") {
+        return "You lose! Scissors beats Paper"
+    } else if (normalizedHumanChoise === "scissors" && computerChoice === "rock") {
+        return "You lose! Rock beats Scissors"
+    } else if (normalizedHumanChoise === "scissors" && computerChoice === "paper") {
+        return "You win! Scissors beats Paper"
+    } else {
+        return "something went wrong, try to write properly! "
+    }
 }
 
 let = humanScore = 0;
 let = computerScore = 0;
 
-console.log(getComputerChoise());
+// console.log(getComputerChoise());
 // console.log(getHumanChoice());
 
+let computerChoise = getComputerChoise();
+let humanCoise = getHumanChoice();
+console.log("Computers choise is", computerChoise);
+console.log(playRound(humanCoise, computerChoise));
 
 // function getRandom() {
 //     return Math.random();
