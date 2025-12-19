@@ -14,8 +14,11 @@ function getHumanChoice() {
     return choice;
 }
 
+let = humanScore = 0;
+let = computerScore = 0;
+
 console.log(getComputerChoise());
-console.log(getHumanChoice());
+// console.log(getHumanChoice());
 
 
 // function getRandom() {
